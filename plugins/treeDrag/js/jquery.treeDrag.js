@@ -48,7 +48,6 @@
                 sourceNode.parentsUntil('.node-container')
                     .find('*')
                     .filter('.node')
-                    .droppable('disable');
             });
 
             // 节点的拖动停止事件处理
@@ -102,7 +101,7 @@
                             targetUl.append(`<li data-id="${thisNodeId}"><p>${sourceLiHtml}</p></li>`);
                         }
                     }
-                } else if(targetLi.html() === null){ // 目标节点为根节点
+                } else if(targetLi.html() == null){ // 目标节点为根节点
                     if(sourceLi.children("ul").length===0){
                         // 无子结点
                         $this.children("ul").append(sourceLi);
